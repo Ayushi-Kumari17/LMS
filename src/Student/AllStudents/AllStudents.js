@@ -79,9 +79,9 @@ const AllStudents = () => {
 
         if (res.status === "success") {
           setLoading(false);
-          const formattedData = res.data.map((item, index) =>
+          const formattedData = res.data.map((item, index, array) =>
             createData(
-              index + 1,
+              array.length - index,
               item,
               item.studentName,
               item.gender,
@@ -260,7 +260,7 @@ const AllStudents = () => {
               <TableBody>
                 {filteredRows.length > 0 ? (
                   filteredRows
-                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)?.reverse()
                     .map((row, idx) => (
                       <TableRow hover role="checkbox" key={idx}>
                         {columns.map((column) => (

@@ -77,9 +77,9 @@ useEffect(() => {
        console.log(FormData)
       if (res.status === "success") {
       
-        const formattedData = res.data.map((item, index) =>
+        const formattedData = res.data.map((item, index, array) =>
           createData(
-            index + 1,
+            array.length - index,
             item,
             item.topic,
             item.topicDescription,
@@ -276,7 +276,7 @@ return (
     </TableRow>
   ) : (
     filteredRows
-      .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+      .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)?.reverse()
       .map((row, idx) => (
         <TableRow hover role="checkbox" key={idx}>
           {columns.map((column) => (

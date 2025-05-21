@@ -7,7 +7,7 @@ const Menuitems = [
     },
   
   {
-    icon: '/sidebar/branch.png',
+    icon: '/sidebar/Branch.png',
     label: "Branch",
     href: "/branch",
   },

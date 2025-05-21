@@ -84,9 +84,9 @@ const SignIn = () => {
       .catch((error) => console.error(error));
   };
 
- const handleFprgot =()=>
+ const handleForgot =()=>
  {
-   navigate("/fogot")
+   navigate("/forgot")
  }
 
   return (
@@ -130,8 +130,9 @@ const SignIn = () => {
           </Box>
 
           <Box className="forgot_password">
-            <Box className="forgot" onClick={handleFprgot}>Forgot Password</Box>
+            <Box className="forgot" onClick={handleForgot}>Forgot Password</Box>
          </Box>
+         
 
           <Button type="submit" className="primary_button login_btn">
          
